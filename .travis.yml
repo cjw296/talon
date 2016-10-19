@@ -1,0 +1,30 @@
+language: python
+
+# for container-y goodness:
+sudo: false
+
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+
+install:
+  - "pip install -Ue .[test,build]"
+
+# command to run tests, e.g. python setup.py test
+script: coverage run --source talon -m nose
+
+after_success:
+  - coveralls
+
+deploy:
+  provider: pypi
+  user: chrisw
+  password:
+    secure: xxx
+  on:
+    tags: true
+    repo: cjw296/talon
+    python: "3.5"
+  skip_cleanup: true
+  distributions: "sdist bdist_wheel"
