@@ -9,7 +9,7 @@ Talon is a system for periodically running jobs that have constraints.
 A :ref:`job <job>` will be :ref:`run <run>` once per :ref:`period <period>`
 once all its :ref:`constraints <constraint>` have been met.
 
-Jobs and any information needed to run them along with their
+Jobs and any information needed to run them
 are stored in the :ref:`configuration <config>` store.
 
 Periods and runs that occur within them are stored in the :ref:`state <state>`
